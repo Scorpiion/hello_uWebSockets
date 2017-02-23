@@ -1,0 +1,8 @@
+runtime: cpp
+version: latest
+
+build:
+  - ./install_uwebsocket.bash
+
+start: ./start_echo.bash
+
