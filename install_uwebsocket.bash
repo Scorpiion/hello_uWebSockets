@@ -1,7 +1,9 @@
 #!/bin/bash
 
-# uWebSockets version
-UWS_VERSION="0.13.0"
+# Version (optinally overridden from env vars)
+if [ -z ${UWS_VERSION+x} ]; then 
+  UWS_VERSION="0.13.0"
+fi
 
 # Install uWebSockets if not already installed
 if [ ! -d "${HOME}/usr/include/uWS" ] ; then
@@ -22,7 +24,7 @@ if [ ! -d "${HOME}/usr/include/uWS" ] ; then
   # Change default port examples to 8080
   sed -i 's/3000/8080/g' uWebSockets/examples/echo.cpp
   sed -i 's/3000/8080/g' uWebSockets/examples/multithreaded_echo.cpp
-
+  
   # Build uWebSockets
   cd uWebSockets
   cmake .
