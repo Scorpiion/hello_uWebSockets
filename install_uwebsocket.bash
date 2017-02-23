@@ -35,5 +35,9 @@ if [ ! -d "${HOME}/usr/include/uWS" ] ; then
   cp libuWS.so ${HOME}/usr/lib64/
   mkdir -p ${HOME}/usr/include/uWS
   cp src/*.h ${HOME}/usr/include/uWS/ 
+  
+  # Build complete
+  echo "Build complete"
+  echo ""
 fi
 
